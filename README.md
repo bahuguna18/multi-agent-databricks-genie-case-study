@@ -89,22 +89,5 @@ requirements.txt
 
 ---
 
-## Notes & Tips
 
-- The project expects `DATABRICKS_HOST` and `DATABRICKS_TOKEN` to be set. Genie clients construct API URLs from the host and space IDs in `config.py`.
-- The `agents/*` clients poll Genie message endpoints until the result is `COMPLETED`, then return attachments or inline results to the coordinator.
-- The coordinator currently uses OpenAI to both route and summarize results. If you want to run without OpenAI, modify `config.validate_config()` or add fallback logic in `agents/coordinator.py`.
-- The folder in this workspace is named `new agents` (contains a space). Running scripts from outside that folder can cause import issues; either run commands from inside the folder, add the folder to `PYTHONPATH`, or rename the folder to `new_agents` and add `__init__.py` files.
-
----
-
-If you'd like, I can also:
-- rename the folder to `new_agents` and update imports to package-style,
-- add a `.env.example` file,
-- add `streamlit` to `requirements.txt`, or
-- add a small `scripts/check_config.py` utility that validates environment variables before running.
-
----
-
-Image (optional): place an `image.png` in the repo and reference it above to include a visual example in the README.
 
